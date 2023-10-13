@@ -65,11 +65,22 @@
 
     function saveText() {
       var text = document.getElementById("editor").value;
+      
+      var fileName = prompt("Enter file name:");
+      var fileExtension = prompt("Enter file extension:");
+      
+      if (!fileName || !fileExtension) {
+        alert("Please enter file name and extension!");
+        return;
+      }
+      
+      var fileNameWithExtension = fileName + "." + fileExtension;
+      
       localStorage.setItem("text", text);
       var blob = new Blob([text], { type: "text/plain" });
       var link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "text.txt";
+      link.download = fileNameWithExtension;
       link.click();
     }
   </script>
