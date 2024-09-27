@@ -39,41 +39,6 @@
     </style>
     
     <script>
-        const currentDate = new Date();
-        const hours = currentDate.getHours();
-        const minutes = currentDate.getMinutes();
-        const ampm = hours >= 12 ? 'pm' : 'am';
-        const formattedDate = `${currentDate.getMonth() + 1}-${currentDate.getDate()}-${currentDate.getFullYear()}`;
-        let className = '';
-        let classTime = '';
-
-        // Update className and classTime based on the schedule
-        if (hours === 8 && minutes >= 0 && minutes <= 55) {
-            className = 'Online_Media';
-            classTime = '8:00-8:55';
-        } else if (hours === 9 && minutes >= 0 && minutes <= 55) {
-            className = 'Biology';
-            classTime = '9:00-9:55';
-        } else if (hours === 10 && minutes >= 0 && minutes <= 55) {
-            className = 'Weight_Training';
-            classTime = '10:00-10:55';
-        } else if (hours === 11 && minutes >= 0 && minutes <= 30) {
-            className = 'English';
-            classTime = '11:00-11:30';
-        } else if (hours === 11 && minutes >= 35 && minutes <= 55) {
-            className = 'Lunch';
-            classTime = '11:35-11:55';
-        } else if (hours === 12 && minutes >= 0 && minutes <= 30) {
-            className = 'English';
-            classTime = '12:00-12:30';
-        } else if (hours === 12 && minutes >= 35 && minutes <= 59) {
-            className = 'World_History';
-            classTime = '12:35-1:30';
-        } else if (hours === 13 && minutes >= 35 && minutes <= 59) {
-            className = 'Algebra_2';
-            classTime = '1:35-2:30';
-        }
-
         document.addEventListener('keydown', function(event) {
             if (event.ctrlKey && event.shiftKey && event.altKey) {
                 if (event.key === 'S') {
